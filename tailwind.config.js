@@ -10,7 +10,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      brand: ['lustucrust']
+      brand: ['lustucrust'],
+      sans: ['Arial']
    },
    colors: {
     green: '#39B615'
