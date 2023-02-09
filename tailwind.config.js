@@ -10,11 +10,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      brand: ['lustucrust'],
+      lustucrust : ['lustucrust'],
       sans: ['Arial']
    },
    colors: {
-    green: '#39B615'
+    green: '#39B615',
+    white: "#FFFFFF"
    }
   },
   plugins: [],
