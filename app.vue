@@ -18,7 +18,7 @@
           <a class="font-lustucrust text-green text-4xl">0 1 2 3 4 5 6 7 8 9</a>
 
           <div class="flex justify-center">
-            <button><a  href="/assets/lustuctust.zip" download><Download class="h-20 w-20 fill-green"/></a></button>
+            <button><a  href="/static/lustuctust.zip" download><Download class="h-20 w-20 fill-green"/></a></button>
           </div>
         </div>
         <div class="h-full relative relative w-12">
