@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "lustucrust";
   src: url("../fonts/lustucrust.otf") format("opentype");
@@ -7,8 +11,3 @@
   font-family: "Digitale";
   src: url("../fonts/digitale.otf") format("opentype");
 }
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
