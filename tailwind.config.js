@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       lustucrust : ['lustucrust'],
+      digitale: ['Digitale'],
       sans: ['Arial']
    },
    colors: {

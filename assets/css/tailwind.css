@@ -6,4 +6,9 @@
     font-family: "lustucrust";
     src: url("../fonts/lustucrust.otf") format("opentype");
   }
+
+  @font-face {
+    font-family: "Digitale";
+    src: url("../fonts/digitale.otf") format("opentype");
+  }
   
