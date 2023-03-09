@@ -30,7 +30,7 @@ const typos : Array<Typo> = [
 {
   name: "digitale",
   text: "La propriete privee mene au crime",
-  size: "xl"
+  size: "2xl"
 },
 ]
 
