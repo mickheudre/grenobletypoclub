@@ -17,7 +17,14 @@ module.exports = {
    colors: {
     green: '#39B615',
     white: "#FFFFFF"
+   },
+   extend: {
+    width: {
+      '112': '28rem',
+      '128': '32rem',
+    }
    }
+
   },
   plugins: [],
 };

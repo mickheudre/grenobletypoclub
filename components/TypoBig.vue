@@ -1,17 +1,17 @@
 <template>
-    <div class="w-2/3 h-4/5 border-2 border-green flex flex-col my-12 bg-white">
+    <div class="max-w-xl  border-2 border-green flex flex-col my-12 bg-white">
       <div class="w-full flex justify-end">
-        <h4 class="text-white w-min m-2  p-3 py-2 bg-green text-xs rounded-md uppercase ">
+        <h4 class="text-white w-min m-4 p-4 py-3 bg-green text-xs rounded-md uppercase ">
           {{ name }}
         </h4>
       </div>
       <div class="flex flex-row justify-center  w-full h-full">
-        <div class="flex flex-col h-full gap-8 m-16 ">
+        <div class="flex flex-col gap-8 m-16 ">
           <a :style="{ 'font-family': name }" :class="styling" class="text-green">a b c d e f g h i j k l m n o p q r s t u v w x y z</a>
           <a :style="{ 'font-family': name }" :class="styling" class="text-green capitalize ">a b c d e f g h i j k l m n o p q r s t u v w x y z</a>
           <a :style="{ 'font-family': name }" :class="styling" class="text-green">0 1 2 3 4 5 6 7 8 9</a>
 
-          <div class="flex justify-center">
+          <div class="flex mt-16 justify-center">
           <a  :href="`/${name}.zip`" :download="`${name}.zip`"><Download class="h-20 w-20 fill-green"/></a>
           </div>
         </div>
