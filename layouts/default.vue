@@ -3,7 +3,7 @@
       <div class="w-full sm:w-64 flex flex-row sm:flex-col items-center justify-between sm:justify-start sm:border-r-2 border-green sm:h-full">
         <NuxtLink to="/"><Logo class="fill-green w-24 h-24 sm:w-40 sm:h-40 my-4 sm:my-8"/></NuxtLink>
         <NuxtLink class="text-green sm:w-full py-4 text-center sm:border-y-2 uppercase" to="about">A Propos</NuxtLink>
-        <NuxtLink class="text-green w-full py-4 text-center sm:border-b-2 uppercase hidden lg:block" to="/">Typographie</NuxtLink>
+        <NuxtLink class="text-green w-full py-4 text-center sm:border-b-2 uppercase hidden lg:block" to="typos">Typographie</NuxtLink>
       </div>
       <div class="flex flex-col relative w-full">
         <slot />

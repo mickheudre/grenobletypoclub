@@ -18,11 +18,13 @@ const typos : Array<Typo> = [
 {
   name: "lustucrust",
   text: "La douleur peut etre positive",
+  description: "LUSTUCRUST est une néo-gothique influencée par les pleins des typographies gothiques. Elle a été composée principalement avec des barres verticales et a été élaborée d'abord pour un calendrier en soutien à un lieu autogéré, le Local Autogéré à Grenoble.",
   size: "2xl"
 },
 {
   name: "digitale",
   text: "La propriete privee mene au crime",
+  description: "DIGITALE est une typographie composée uniquement avec des slashs-anti-slashs, créée à l'origine pour une pochette d'un split K7 Guillem All/Ponge finalement non retenue. Elle devint une tentative de logo pour le groupe dont elle tire son nom.",
   size: "xl"
 },
 ]
