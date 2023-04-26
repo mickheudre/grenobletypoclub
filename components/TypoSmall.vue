@@ -1,5 +1,5 @@
 <template>
-    <div class="border-2 border-green text-green p-4 px-6 relative" >
+    <div class="border-2 border-green text-green p-4 px-6 relative max-w-4xl" >
         <span class="bg-green text-white capitalize p-1 px-3 rounded-md absolute right-6 top-4">{{ name }}</span>
         <h2 :style="{ 'font-family': name }" :class="styling" class="mb-2"> {{ name }}</h2>
         <span :style="{ 'font-family': name }" :class="substyling" class="">{{ text }}</span>
