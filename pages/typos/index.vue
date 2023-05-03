@@ -1,7 +1,6 @@
 <template>
-
-    <div class="flex flex-col relative md:mx-4 lg:mx-12">
-      <TypoSmall v-bind="typo" v-for="(typo, index) in typos" class="my-2"/>
+    <div class="flex flex-col relative md:mx-4 lg:mx-12 mt-4">
+      <TypoSmall v-bind="typo" v-for="(typo, index) in typos" class="my-4"/>
   </div>
 </template>
 <script setup lang="ts">
@@ -24,6 +23,12 @@ const typos : Array<Typo> = [
   name: "digitale",
   text: "La propriete privee mene au crime",
   description: "DIGITALE est une typographie composée uniquement avec des slashs-anti-slashs, créée à l'origine pour une pochette d'un split K7 Guillem All/Ponge finalement non retenue. Elle devint une tentative de logo pour le groupe dont elle tire son nom.",
+  size: "xl"
+},
+{
+  name: "Ariale",
+  text: "Ma.on douce, nous étions comme deux exilé.es",
+  description: "Ariale est une typographie composée uniquement avec des slashs-anti-slashs, créée à l'origine pour une pochette d'un split K7 Guillem All/Ponge finalement non retenue. Elle devint une tentative de logo pour le groupe dont elle tire son nom.",
   size: "xl"
 },
 ]
