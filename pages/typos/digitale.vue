@@ -13,7 +13,7 @@
                     0 1 2 3 4 5 6 7 8 9
                 </div>
             </div>
-            <h2 contenteditable="true" spellcheck="false" class="font-digitale text-4xl text-green border-2 p-8 border-green my-8 ">La propriete privee mene au crime</h2>
+            <h2 contenteditable="true" spellcheck="false" class="font-digitale text-4xl text-green border-2 rounded-md p-8 border-green my-8 ">La propriete privee mene au crime</h2>
             <div></div>
             <div class="my-16">
                 <h4 class="font-semibold text-xl text-green">Exemples d'utilisation</h4>

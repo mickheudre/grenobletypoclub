@@ -9,18 +9,16 @@
       </div>
       <div class="flex flex-row   w-full h-full">
         <div class="flex flex-col justify-between gap-8 m-16 ">
-          <a :style="{ 'font-family': name }" :class="styling" class="text-green">a b c d e f g h i j k l m n o p q r s t u v w x y z</a>
-          <a :style="{ 'font-family': name }" :class="styling" class="text-green capitalize ">a b c d e f g h i j k l m n o p q r s t u v w x y z</a>
-          <a :style="{ 'font-family': name }" :class="styling" class="text-green">0 1 2 3 4 5 6 7 8 9</a>
+          <div class="flex flex-col">
+          <a v-for="line in preview" :style="{ 'font-family': name }" :class="styling" class="text-green my-4">{{ line }}</a>
+          </div>
 
-          <div class="flex mt-16 justify-center">
+          <div class="flex justify-center">
           <a  :href="`/${name}.zip`" :download="`${name}.zip`"><Download class="h-20 w-20 fill-green hover:rotate-45 origin-center transition duration-150"/></a>
           </div>
         </div>
-        <div class="relative w-12">
-          <div class="absolute left-0 -translate-x-1/2 translate-y-1/2 inset-y-0 ">
-            <p :style="{ 'font-family': name }" :class="styling" class=" w-max text-green rotate-90 origin-center">{{ text }}</p>
-          </div>
+        <div class="relative w-fit h-fit">
+            <p :style="{ 'font-family': name }" :class="styling" class="absolute -left-1 top-0  mt-12 w-max text-green rotate-90 origin-top-left">{{ text }}</p>
         </div>
       </div>
     </div>
@@ -32,7 +30,8 @@
 export interface Typo {
     name: string,
     text: string,
-    size: string
+    size: string,
+    preview: Array<string>
 }
 const styling = computed(() => ({
   'text-2xl': props.size == "2xl",
