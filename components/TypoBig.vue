@@ -10,7 +10,7 @@
       <div class="flex flex-row   w-full h-full">
         <div class="flex flex-col justify-between gap-8 m-16 ">
           <div class="flex flex-col">
-          <a v-for="line in preview" :style="{ 'font-family': name }" :class="styling" class="text-green my-4">{{ line }}</a>
+          <a v-for="line in preview" :style="{ 'font-family': name }" class="text-green my-4 text-xl">{{ line }}</a>
           </div>
 
           <div class="flex justify-center">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="relative w-fit h-fit">
-            <p :style="{ 'font-family': name }" :class="styling" class="absolute -left-1 top-0  mt-12 w-max text-green rotate-90 origin-top-left">{{ text }}</p>
+            <p :style="{ 'font-family': name }"  class="absolute -left-1 top-0  mt-12 w-max text-green rotate-90 origin-top-left text-xl">{{ text }}</p>
         </div>
       </div>
     </div>
@@ -33,10 +33,7 @@ export interface Typo {
     size: string,
     preview: Array<string>
 }
-const styling = computed(() => ({
-  'text-2xl': props.size == "2xl",
-  'text-xl': props.size == "xl"
-}))
+
 
 const props = defineProps<Typo>()
 
