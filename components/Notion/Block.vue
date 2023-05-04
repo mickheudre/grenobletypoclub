@@ -45,7 +45,6 @@ const isValidParagraph = (block) => {
 }
 
 const isValidHeading1 = (block) => {
-  console.log(block)
   if (block.type !== "heading_1") {
     return false;
   }

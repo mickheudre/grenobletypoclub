@@ -6,5 +6,4 @@
 
 <script setup>
 const props = defineProps(['page'])
-console.log(props.page)
 </script>
