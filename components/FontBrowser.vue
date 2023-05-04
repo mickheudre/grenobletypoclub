@@ -26,7 +26,6 @@ const { data, pending, error, refresh } = await useFetch("https://api.notion.com
   } )
 
 data.value.results.forEach(element => {
-  console.log(element.properties.Citation.rich_text[0].plain_text)
   typos.push({ 
     name: element.properties.Name.title[0].plain_text, 
     preview: element.properties.preview.rich_text[0].plain_text.split(';'), 
