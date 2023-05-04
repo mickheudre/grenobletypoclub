@@ -49,11 +49,6 @@ const typos : Array<Typo> = [
 ]
 
 
-// const sortedTypos  = computed(() => {
-//   return typos.sort((a,b) => {
-//     return a.name == selected.value ? -1 : b.name == selected.value ? 1 : 0;
-//   })
-// })
 
 
 </script>

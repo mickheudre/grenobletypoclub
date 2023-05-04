@@ -32,5 +32,15 @@ const typos : Array<Typo> = [
   size: "xl"
 },
 ]
-
+const { data } = await useFetch('https://api.notion.com/v1/blocks/6525a38b904f481b8ed11e8a6f17d713/children',
+{
+  onRequest({ url, options, cancel }) {
+    options.headers = {
+      ...options.headers,
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${process.env.NOTION_TOKEN}`,
+      'Notion-Version': '2022-06-28',
+    }
+  }
+} )
 </script>
