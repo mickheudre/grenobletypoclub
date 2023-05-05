@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col relative md:mx-4 lg:mx-12 mt-4">
-    <TypoSmall v-bind="typo" v-for="(typo, index) in typos" class="my-4"/>
+    <TypoSmall v-bind="typo" v-for="(typo, index) in fonts" class="my-4"/>
   </div>
 </template>
 <script setup lang="ts">
@@ -13,38 +13,35 @@ useHead({
 })
 
 
-const selected = ref("lustucrust")
-const typos : Array<Typo> = [
-  {
-    name: "lustucrust",
-    text: "La douleur peut etre positive",
-    description: "LUSTUCRUST est une néo-gothique influencée par les pleins des typographies gothiques. Elle a été composée principalement avec des barres verticales et a été élaborée d'abord pour un calendrier en soutien à un lieu autogéré, le Local Autogéré à Grenoble.",
-    size: "2xl"
-  },
-  {
-    name: "digitale",
-    text: "La propriete privee mene au crime",
-    description: "DIGITALE est une typographie composée uniquement avec des slashs-anti-slashs, créée à l'origine pour une pochette d'un split K7 Guillem All/Ponge finalement non retenue. Elle devint une tentative de logo pour le groupe dont elle tire son nom.",
-    size: "xl"
-  },
-  {
-    name: "Ariale",
-    text: "Ma.on douce, nous étions comme deux exilé.es",
-    description: "Ariale est une typographie composée uniquement avec des slashs-anti-slashs, créée à l'origine pour une pochette d'un split K7 Guillem All/Ponge finalement non retenue. Elle devint une tentative de logo pour le groupe dont elle tire son nom.",
-    size: "xl"
-  },
-  ]
-  
-  
-  // const { data, pending, error, refresh } = await useFetch("https://api.notion.com/v1/databases/f50d073e296d4013b0d91b731e3d7d25/query",
-  // {
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': `Bearer ${process.env.NOTION_TOKEN}`,
-  //     'Notion-Version': '2022-06-28',
-  //   }
+const fonts = useState('font', () => {
+  const typos: Array<Font> = []
     
-  // } )
-  
-  
+    useFetch("https://api.notion.com/v1/databases/0d70e9e7157b447b92d98b9f4808857d/query",
+    {
+      method: "POST",
+      onRequest({ url, options, cancel }) {
+        options.headers = {
+          ...options.headers,
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.NOTION_TOKEN}`,
+          'Notion-Version': '2022-06-28',
+        }
+      }
+      
+    } ).then(response => {
+      response.data.value.results.forEach(element => {
+        if (element.properties.Publier.checkbox) {
+          typos.push({ 
+          name: element.properties.Name.title[0].plain_text, 
+          preview: element.properties.preview.rich_text[0].plain_text.split(';'), 
+          text: element.properties.Citation.rich_text[0].plain_text,
+          description: element.properties.Presentation.rich_text[0].plain_text,
+        })
+        }
+       
+      });
+    })
+    
+    return typos;
+  })  
 </script>

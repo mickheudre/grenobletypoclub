@@ -18,14 +18,10 @@
 
 <script setup lang="ts">
 
-
-export interface Typo {
+const props = defineProps<{
     name: string,
     text: string,
     description: string,
-    size: string
-}
-
-const props = defineProps<Typo>()
+}>()
 
 </script>
