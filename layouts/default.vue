@@ -9,7 +9,7 @@
       <div class="border-2 border-green my-8 flex justify-between px-8 mx-4 sm:mx-8 rounded-md">
         <NuxtLink class="text-green text-xl my-4 font-semibold" to="typos">Parcourir les typos <Arrow class="stroke-green h-6 w-6 inline" /></NuxtLink>
       </div>
-      <slot class="flex flex-col"/>
+      <slot />
     </div>
     
   </div>
