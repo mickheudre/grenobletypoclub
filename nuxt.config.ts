@@ -1,4 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+
+import { useGetFonts } from "./composables/states";
 export default defineNuxtConfig({
     postcss: {
         plugins: {
@@ -9,8 +11,25 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/tailwind.css',
   ],
-  runtimeConfig: {
+  // hooks: {
+  //   async 'nitro:config' (nitroConfig) {
+  //     if (nitroConfig.dev) { return }
 
-    apiSecret: process.env.NOTION_TOKEN,
-  },
+  //     // fonts.value.forEach(element => {
+  //       nitroConfig.prerender.routes.push("/typos/digitale")
+  //     // });
+  //   }
+  // }
+  // nitro: {
+  //   prerender: {
+  //     routes: ['/typos/digitale']
+  //   }
+  // }
+  // generate: {
+  //   routes: [
+  //   '/typos/digitale',
+  //   '/typos/ariale',
+  //   '/typos/lustucrust'
+  //   ]
+  // }
 });

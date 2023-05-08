@@ -2,7 +2,7 @@
     <div class="border-2 border-green text-green p-4 px-6  max-w-4xl" >
         <div class="flex justify-between my-2">
             <span contenteditable="true" spellcheck="false" :style="{ 'font-family': name }"  class="text-2xl">{{ text }}</span>
-            <NuxtLink :to="`typos/${name}`"><span class="bg-green grow-0 text-white capitalize p-2 px-4 h-fit rounded-md">{{ name }}</span></NuxtLink>
+            <NuxtLink :to="`${name.toLowerCase()}`"><span class="bg-green grow-0 text-white capitalize p-2 px-4 h-fit rounded-md">{{ name }}</span></NuxtLink>
 
         </div>
 
@@ -22,6 +22,7 @@ const props = defineProps<{
     name: string,
     text: string,
     description: string,
+    url: string
 }>()
 
 </script>

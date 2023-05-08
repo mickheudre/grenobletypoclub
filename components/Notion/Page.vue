@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NotionBlock v-for="content in page.results"  :key="content.id" :block="content"></NotionBlock>
+        <NotionBlock v-for="content in page?.results"  :key="content.id" :block="content"></NotionBlock>
     </div>
 </template>
 

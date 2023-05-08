@@ -17,6 +17,9 @@
   v-bind:block="block"
   >
 </NotionParagraph>
+<NotionImage v-if="isValidImage(block)"
+:link="block" 
+/>
 <!-- <li v-if="isValidBulletedListItem(block)">
   {{ block.bulleted_list_item.rich_text[0].plain_text }}
 </li>
@@ -55,6 +58,13 @@ const isValidHeading1 = (block) => {
   
   if (block.heading_1.rich_text[0].plain_text.length == 0) {
     return false;
+  }
+  return true;
+}
+
+const isValidImage = (block) => {
+  if (block.type !== "image") {
+    return false
   }
   return true;
 }
