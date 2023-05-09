@@ -20,13 +20,21 @@ export default defineNuxtConfig({
   //     // });
   //   }
   // }
-  // nitro: {
-  //   prerender: {
-  //     routes: ['/typos/digitale']
-  //   }
-  // }
+  nitro: {
+    prerender: {
+      routes: [
+        '/',
+        '/typos',
+      '/typos/digitale',
+      '/typos/ariale',
+      '/typos/lustucrust'
+      ]
+    }
+  }
   // generate: {
   //   routes: [
+  //     '/',
+  //     '/typos',
   //   '/typos/digitale',
   //   '/typos/ariale',
   //   '/typos/lustucrust'

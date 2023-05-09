@@ -28,10 +28,9 @@
 </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 
 const props = defineProps(['block'])
-
 const isValidParagraph = (block) => {
   if (block.type !== "paragraph") {
     return false;

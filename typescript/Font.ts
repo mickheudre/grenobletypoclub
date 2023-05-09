@@ -4,5 +4,6 @@ export default interface Font {
     text: string,
     preview: Array<string>,
     description: string,
-    url: string
+    url: string,
+    page: any
 }

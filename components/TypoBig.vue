@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-xl border-2 border-green flex flex-col justify-between my-12 bg-white">
     <div class="w-full flex justify-end">
-      <NuxtLink :to="`${name.toLowerCase()}`">
+      <NuxtLink :to="`${name}`">
         <h4 class="text-white w-min m-4 p-4 py-3 bg-green text-xs rounded-md uppercase ">
           {{ name }}
         </h4>
@@ -30,7 +30,5 @@ const props = defineProps<{
   name: string,
   text: string,
   preview: Array<string>
-}>()
-  
-  
+}>()  
 </script>
