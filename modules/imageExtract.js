@@ -23,45 +23,49 @@ export default defineNuxtModule({
     
     nuxt.hook('build:done', async () => {
       if (process.env.NODE_ENV == "production") {
-
-      
-      const response  = await fetch("https://api.notion.com/v1/databases/0d70e9e7157b447b92d98b9f4808857d/query",
-      {
-        method: "POST",
         
-        headers : {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.NOTION_TOKEN}`,
-          'Notion-Version': '2022-06-28',
-        }
-      })
-      
-      const body = await response.json();    
-      
-      for (const typo of body.results) {
-        const url  = typo.url
-        const  data  = await fetch(`https://api.notion.com/v1/blocks/${url.slice(url.length - 32, url.length)}/children`,
+        
+        const response  = await fetch("https://api.notion.com/v1/databases/0d70e9e7157b447b92d98b9f4808857d/query",
         {
+          method: "POST",
+          
           headers : {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${process.env.NOTION_TOKEN}`,
             'Notion-Version': '2022-06-28',
           }
         })
-
-        const body = await data.json()
         
-        for(const block of body.results) {
-          if (block.type === "image") {
-            const dl = new DownloaderHelper(block.image.file.url,path.join( __dirname, "../assets/images/"));
-            dl.on('end', () => console.log('Download Completed'));
-            dl.on('error', (err) => console.log('Download Failed', err));
-            dl.start().catch(err => console.error(err));
+        const body = await response.json();    
+        
+        for (const typo of body.results) {
+          const url  = typo.url
+          const  data  = await fetch(`https://api.notion.com/v1/blocks/${url.slice(url.length - 32, url.length)}/children`,
+          {
+            headers : {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${process.env.NOTION_TOKEN}`,
+              'Notion-Version': '2022-06-28',
+            }
+          })
+          
+          const body = await data.json()
+          
+          for(const block of body.results) {
+            if (block.type === "image") {
+              const dest  = path.join( __dirname, "../assets/images/")
+              if (!fs.existsSync(dest) ){
+                fs.mkdirSync(destr);
+            }
+              const dl = new DownloaderHelper(block.image.file.url,dest);
+              dl.on('end', () => console.log('Download Completed'));
+              dl.on('error', (err) => console.log('Download Failed', err));
+              dl.start().catch(err => console.error(err));
+            }
           }
         }
       }
-    }
-
+      
     })
   }})
   
