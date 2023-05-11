@@ -55,7 +55,7 @@ export default defineNuxtModule({
             if (block.type === "image") {
               const dest  = path.join( __dirname, "../assets/images/")
               if (!fs.existsSync(dest) ){
-                fs.mkdirSync(destr);
+                fs.mkdirSync(dest);
             }
               const dl = new DownloaderHelper(block.image.file.url,dest);
               dl.on('end', () => console.log('Download Completed'));
