@@ -53,7 +53,7 @@ export default defineNuxtModule({
           
           for(const block of body.results) {
             if (block.type === "image") {
-              const dest  = path.join( __dirname, "../assets/images/")
+              const dest  = path.join( __dirname, "../public/")
               if (!fs.existsSync(dest) ){
                 fs.mkdirSync(dest);
             }
