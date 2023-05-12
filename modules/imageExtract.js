@@ -23,6 +23,10 @@ export default defineNuxtModule({
     
     nuxt.hook('build:done', async () => {
       if (process.env.NODE_ENV == "production") {
+        const dest  = path.join( __dirname, "../public/")
+        if (!fs.existsSync(dest) ){
+          fs.mkdirSync(dest);
+        }
         
         
         const response  = await fetch("https://api.notion.com/v1/databases/0d70e9e7157b447b92d98b9f4808857d/query",
@@ -39,6 +43,18 @@ export default defineNuxtModule({
         const body = await response.json();    
         
         for (const typo of body.results) {
+          
+          const files = typo.properties.Download.files
+          if (files.length > 0) {
+            const file = files[0].file.url
+            const dl = new DownloaderHelper(file,dest);
+            dl.on('end', () => console.log('Download Completed'));
+            dl.on('error', (err) => console.log('Download Failed', err));
+            dl.start().catch(err => console.error(err));
+          }
+          
+          
+          
           const url  = typo.url
           const  data  = await fetch(`https://api.notion.com/v1/blocks/${url.slice(url.length - 32, url.length)}/children`,
           {
@@ -49,14 +65,12 @@ export default defineNuxtModule({
             }
           })
           
-          const body = await data.json()
+          const body2 = await data.json()
           
-          for(const block of body.results) {
+          for(const block of body2.results) {
+            
             if (block.type === "image") {
-              const dest  = path.join( __dirname, "../public/")
-              if (!fs.existsSync(dest) ){
-                fs.mkdirSync(dest);
-            }
+
               const dl = new DownloaderHelper(block.image.file.url,dest);
               dl.on('end', () => console.log('Download Completed'));
               dl.on('error', (err) => console.log('Download Failed', err));
