@@ -12,7 +12,7 @@ module.exports = {
     fontFamily: {
       lustucrust : ['lustucrust'],
       digitale: ['Digitale'],
-      sans: ['Arial']
+      sans: ['ArialeRegular']
    },
    colors: {
     green: '#39B615',
@@ -22,6 +22,9 @@ module.exports = {
     width: {
       '112': '28rem',
       '128': '32rem',
+    },
+    height: {
+      '152': '38rem',
     }
    }
 
