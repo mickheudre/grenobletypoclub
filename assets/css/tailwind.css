@@ -11,3 +11,8 @@
   font-family: "Digitale";
   src: url("../fonts/digitale.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "ArialeRegular";
+  src: url("../fonts/ariale.otf") format("opentype");
+}
