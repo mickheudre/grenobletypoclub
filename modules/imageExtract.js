@@ -21,7 +21,7 @@ const defaults = {
 export default defineNuxtModule({  
   setup (options, nuxt) {
     
-    nuxt.hook('build:done', async () => {
+    nuxt.hook('build:before', async () => {
       if (process.env.NODE_ENV == "production") {
         const dest  = path.join( __dirname, "../public/")
         if (!fs.existsSync(dest) ){
