@@ -14,13 +14,12 @@
                 {{ font.data.value?.api.text }}
                 <div class="absolute top-0 right-0 p-2"><GlyphsEdit class="h-5"/></div>
             </h2>
-            <div></div>
+            <a  :href="`/${font.data.value?.api.name}.zip`" :download="`${font.data.value?.api.name}.zip`"><Download class="h-20 w-20 fill-green hover:rotate-45 origin-center transition duration-150 mx-auto my-16 "/></a>
+            
             <div>
                 <div :class=" content.type == 'image' ? 'bg-green w-fit h-fit' : 'text-green'" v-for="content in font.data.value?.api.page.results">
                     <NotionBlock  class="mix-blend-screen" :key="content.id" :block="content"></NotionBlock>
-
                 </div>
-                <!-- {{ font.data.value?.api.page }} -->
             </div>
         </div>
     </div>
