@@ -4,7 +4,7 @@
       <NuxtLink to="/"><Logo class="fill-green w-20 h-20 sm:w-24 sm:h-24 lg:w-40 lg:h-40 my-4 lg:my-16"/></NuxtLink>
       <WidgetsNews />
       <WidgetsAbout />
-      <!-- <WidgetsGallery /> -->
+      <WidgetsGallery />
 
     </div>
     <div class="flex flex-col relative w-full">
