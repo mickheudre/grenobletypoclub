@@ -11,9 +11,7 @@
     "autoprefixer": "latest",
     "nuxt": "^3.4.3",
     "postcss": "latest",
-    "tailwindcss": "latest"
-  },
-  "dependencies": {
+    "tailwindcss": "latest",
     "node-downloader-helper": "^2.1.7",
     "node-fetch": "^3.3.1"
   }
