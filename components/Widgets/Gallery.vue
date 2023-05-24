@@ -5,7 +5,7 @@
             <div class="grid grid-cols-1">
 
             <div :class=" content.block.type == 'image' ? 'bg-green w-fit h-fit' : 'text-green'" class="m-4" v-for="content in images">
-                <NuxtLink :to="content.name"><NotionBlock class="mix-blend-screen" :key="content.block.id" :block="content.block"></NotionBlock></NuxtLink>
+                <NuxtLink :to="content.name"><NotionBlock class="mix-blend-screen" :key="content.block.id" :block="content.block" :aria-label="`En savoir plus sur  ${content.name}`"></NotionBlock></NuxtLink>
                 
             </div>
         </div>
