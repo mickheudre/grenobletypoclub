@@ -5,14 +5,17 @@
 @font-face {
   font-family: "lustucrust";
   src: url("../fonts/lustucrust.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Digitale";
   src: url("../fonts/digitale.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "ArialeRegular";
   src: url("../fonts/ariale.otf") format("opentype");
+  font-display: swap;
 }
