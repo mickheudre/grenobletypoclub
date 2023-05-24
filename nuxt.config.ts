@@ -1,6 +1,18 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Grenoble Typo Club',
+      meta: [
+        { name: 'description', content: "Bienvenue sur le site du Grenoble Typo Club. Nos fontes sont distribuées sous licence libre, bancales mais pleines d’amour, créées pour que chacun.e puisse s’en emparer." }
+      ],
+      charset: 'utf-8',
+      htmlAttrs: {
+        lang: 'fr'
+      }
+
+    }},
   modules: [
     [
       '~/modules/imageExtract.js',
