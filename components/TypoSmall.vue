@@ -1,37 +1,25 @@
 <template>
-    <div class="border-2 border-green text-green p-4 px-6 relative max-w-4xl" >
-        <span class="bg-green text-white capitalize p-1 px-3 rounded-md absolute right-6 top-4">{{ name }}</span>
-        <h2 :style="{ 'font-family': name }" :class="styling" class="mb-2"> {{ name }}</h2>
-        <span :style="{ 'font-family': name }" :class="substyling" class="">{{ text }}</span>
-        <div class="flex flex-col sm:flex-row justify-center items-center">
-            <p class="my-8 ">{{ description }}</p>
-            <a :href="`/${name}.zip`" :download="`${name}.zip`"><DownloadInverted class="h-20 w-20 stroke-green fill-green sm:ml-24"/></a>
+    <div class="border-2 border-green text-green p-4 px-6  max-w-4xl" >
+        <div class="flex justify-between my-2">
+            <span contenteditable="true" spellcheck="false" :style="{ 'font-family': name }"  class="text-2xl">{{ text }}</span>
+            <NuxtLink :to="`${name?.toLowerCase()}`"><span class="bg-green grow-0 text-white capitalize p-2 px-4 h-fit rounded-md">{{ name }}</span></NuxtLink>
         </div>
-        
-        
+        <div class="flex flex-col sm:flex-row justify-center items-center">
+            <p class="my-8 font-bol">{{ description }}</p>
+            <!-- <NuxtLink :to="`/typos/${name}`"><EnSavoirPlus class="h-16 w-16 hover:rotate-180 transition duration-150 stroke-green fill-green sm:ml-24 mr-3"/></NuxtLink> -->
+        </div>        
     </div>
 </template>
 
 
 <script setup lang="ts">
 
-
-export interface Typo {
+const props = defineProps<{
     name: string,
     text: string,
     description: string,
-    size: string
-}
-const styling = computed(() => ({
-    'text-3xl sm:text-5xl': props.size == "2xl",
-    'text-xl sm:text-3xl': props.size == "xl"
-}))
-
-const substyling = computed(() => ({
-    'text-2xl': props.size == "2xl",
-    'text-lg': props.size == "xl"
-}))
-
-const props = defineProps<Typo>()
+    url: string,
+    page: any
+}>()
 
 </script>

@@ -22,9 +22,11 @@ module.exports = {
     width: {
       '112': '28rem',
       '128': '32rem',
+    },
+    height: {
+      '152': '38rem',
     }
    }
-
   },
   plugins: [],
 };
