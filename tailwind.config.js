@@ -12,10 +12,9 @@ module.exports = {
     fontFamily: {
       lustucrust : ['lustucrust'],
       digitale: ['Digitale'],
-      sans: ['ArialeRegular']
    },
    colors: {
-    green: '#39B615',
+    green: '#258912',
     white: "#FFFFFF"
    },
    extend: {
