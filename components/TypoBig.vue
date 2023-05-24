@@ -10,7 +10,7 @@
     <div class="flex flex-row   w-full h-full">
       <div class="flex flex-col justify-between gap-8 m-16 ">
         <div class="flex flex-col">
-          <a v-for="line in preview" :style="{ 'font-family': name }" class="text-green my-4 text-xl" :aria-label="`En savoir plus sur ${name}`">{{ line }} </a>
+          <p v-for="line in preview" :style="{ 'font-family': name }" class="text-green my-4 text-xl">{{ line }} </p>
         </div>
         
         <div class="flex justify-center">
