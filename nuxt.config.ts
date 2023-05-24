@@ -19,7 +19,8 @@ export default defineNuxtConfig({
       {
         baseUrl: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/',
       }
-    ]
+    ],
+    '@nuxtjs/robots',
   ],
   postcss: {
     plugins: {
