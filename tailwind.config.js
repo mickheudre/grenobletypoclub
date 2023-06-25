@@ -12,6 +12,7 @@ module.exports = {
     fontFamily: {
       lustucrust : ['lustucrust'],
       digitale: ['Digitale'],
+      fulmine: ['Fulmine'],
       sans: ['Arial']
    },
    colors: {
